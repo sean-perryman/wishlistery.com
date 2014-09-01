@@ -2,6 +2,6 @@
 	- if Rails.application.assets.find_asset "#{game.appID}_compact.jpg"
 		= link_to image_tag(asset_path("#{game.appID}_compact.jpg")), "/?display_app=#{game.appID}"
 
-	- if File.file?("/assets/images/#{game.appID}_compact.jpg")
+	- if File.file?(Rails.root + "/assets/images/#{game.appID}_compact.jpg")
 		%h1 TRUE
 			
