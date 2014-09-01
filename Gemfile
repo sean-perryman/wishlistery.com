@@ -52,3 +52,4 @@ gem 'devise'
 
 # Lazy Load
 gem 'lazyload-rails'
+#gem 'jquery-lazy-images'

@@ -17,3 +17,11 @@
 //= require bootstrap-sprockets
 //= require_tree .
 $("img").lazyload();
+
+var ready;
+ready = function() {
+	
+};
+
+$(document).ready(ready);
+$(document).on('page:load', ready);
