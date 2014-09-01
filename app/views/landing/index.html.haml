@@ -1,4 +1,4 @@
 - @games.each do |game|
-	- if Rails.application.assets.find_asset "#{game.appID}.gif"
-		= link_to image_tag(asset_path("#{game.appID}.gif")), "/?display_app=#{game.appID}"
+	- if Rails.application.assets.find_asset "#{game.appID}_compact.jpg"
+		= link_to image_tag(asset_path("#{game.appID}_compact.jpg")), "/?display_app=#{game.appID}"
 			
