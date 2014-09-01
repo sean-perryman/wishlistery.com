@@ -11,7 +11,25 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140901161330) do
+ActiveRecord::Schema.define(version: 20140901171056) do
+
+  create_table "games", force: true do |t|
+    t.integer  "appID",       null: false
+    t.string   "title",       null: false
+    t.integer  "releasedate", null: false
+    t.integer  "lastupdate",  null: false
+    t.integer  "flags",       null: false
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  add_index "games", ["appID"], name: "index_games_on_appID", unique: true, using: :btree
+
+  create_table "pricedata", force: true do |t|
+    t.integer  "appID"
+    t.float    "price"
+    t.datetime "retrieved_date"
+  end
 
   create_table "users", force: true do |t|
     t.string   "email",                  default: "", null: false

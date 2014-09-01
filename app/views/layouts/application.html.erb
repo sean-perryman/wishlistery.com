@@ -67,7 +67,7 @@
 		    <ul class="nav navbar-nav navbar-justified">
 		    	<li><a href='/'>[Clear]</a></li>
 					<% ('a' .. 'z').each do |letter| %>
-		    		<%= content_tag :li, link_to( letter, :controller => "search", :search => letter ) %>
+		    		<%= content_tag :li, link_to( letter, :controller => "/landing", :search => letter ) %>
  					<% end %>
       	</ul>
     	</div>

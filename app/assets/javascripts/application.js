@@ -13,6 +13,14 @@
 //= require jquery
 //= require jquery_ujs
 //= require turbolinks
-//= require_tree .
 //= require jquery
 //= require bootstrap-sprockets
+//= require_tree .
+
+var ready;
+ready = function() {
+	$("img.lazy").show().lazyload();
+};
+
+$(document).ready(ready);
+$(document).on('page:load', ready);

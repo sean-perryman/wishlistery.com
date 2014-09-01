@@ -1,2 +1,8 @@
-%h1 Landing#index
-%p Find me in app/views/landing/index.html.haml
+- @games.each do |game|
+	- if File.file?("images/#{game.appID}_full.jpg")
+		= image_tag :class => "steam-icon lazy", :data-original => "images/#{game.appID}_compact.jpg", :width => "292", :height => "136"
+		
+	- else
+		%h1 False
+	%h1= game.title
+	= link_to "Game", "/?display_app=#{game.appID}"
