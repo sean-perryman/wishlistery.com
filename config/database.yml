@@ -49,6 +49,6 @@ test:
 #
 production:
   <<: *default
-  database: wishlistery_com_production
-  username: wishlistery_com
+  database: wishlistery
+  username: wishlistery
   password: <%= ENV['WISHLISTERY_COM_DATABASE_PASSWORD'] %>
