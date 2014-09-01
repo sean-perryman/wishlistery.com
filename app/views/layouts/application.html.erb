@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <title>WishlisteryCom</title>
+  <title>Wishlistery</title>
   <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
   <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
   <%= csrf_meta_tags %>
@@ -40,8 +40,18 @@
 	  </div>
 	</nav>
 	<!-- End of header -->
-<%= yield %>
+
+	<!-- Device Flash Notices -->
+	<p class="notice"><%= notice %></p>
+  <p class="alert"><%= alert %></p>
+	
+	<!-- Main Container -->
 	<div class="col-md-1"></div>
+	<div class="col-md-10 col-centered">
+		<%= yield %>
+	</div>
+	<div class="col-md-1"></div>
+	
 	<!-- Start of footer -->
 	<nav class="navbar navbar-inverse navbar-fixed-bottom" role="navigation">
 	  <div class="container-fluid">
@@ -56,15 +66,9 @@
 	  	<div class="collapse navbar-collapse" id="collapse-3">
 		    <ul class="nav navbar-nav navbar-justified">
 		    	<li><a href='/'>[Clear]</a></li>
-					<?php
-		    		foreach(range('a','z') as $i) {
-        			if (isset($_GET['search']) && $_GET['search'] == $i) {
-        				echo "\t\t\t\t\t<li class='active'><a href='?search=" . $i . "'>" . $i . "</a></li>";
-	        		} else {
-	        			echo "\t\t\t\t\t<li><a href='?search=" . $i . "'>" . $i . "</a></li>";
-	        		}
-        		}
- 					?>
+					<% ('a' .. 'z').each do |letter| %>
+		    		<%= content_tag :li, link_to( letter, :controller => "search", :search => letter ) %>
+ 					<% end %>
       	</ul>
     	</div>
 	  </div>
