@@ -1,8 +1,4 @@
 - @games.each do |game|
-	- if File.file?("images/#{game.appID}_full.jpg")
-		= image_tag :class => "steam-icon lazy", :data-original => "images/#{game.appID}_compact.jpg", :width => "292", :height => "136"
-		
-	- else
-		%h1 False
-	%h1= game.title
-	= link_to "Game", "/?display_app=#{game.appID}"
+	- if Rails.application.assets.find_asset "#{game.appID}.gif"
+		= link_to image_tag(asset_path("#{game.appID}.gif")), "/?display_app=#{game.appID}"
+			

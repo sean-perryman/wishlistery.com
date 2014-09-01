@@ -19,7 +19,8 @@
 
 var ready;
 ready = function() {
-	$("img.lazy").show().lazyload();
+	//$("img.lazy").show().lazyload();
+	$("img").lazyload();
 };
 
 $(document).ready(ready);

@@ -63,3 +63,6 @@ gem 'newrelic_rpm'
 
 # Devise for user authentication!
 gem 'devise'
+
+# Lazy Load
+gem 'lazyload-rails'
