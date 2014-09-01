@@ -1,5 +1,3 @@
 - @games.each do |game|
-	= link_to image_tag(asset_path("#{game.appID}_compact.jpg")), "/?display_app=#{game.appID}"
-
-%h1= asset_path
+	=image_tag "/assets/images/#{game.appID}_compact.jpg"
 			

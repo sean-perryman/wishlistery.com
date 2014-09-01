@@ -16,11 +16,10 @@
 //= require jquery
 //= require bootstrap-sprockets
 //= require_tree .
-$("img").lazyload();
 
 var ready;
 ready = function() {
-	
+	$("img").lazyload();
 };
 
 $(document).ready(ready);
